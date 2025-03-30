@@ -15,6 +15,10 @@ const errorHandler=require('./controllers/errorController')
 const app=express();
 
 
+
+app.set('trust proxy', 1 /* number of proxies between user and server */)
+app.get('/ip', (request, response) => response.send(request.ip))
+
 app.use(helmet())
 if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'))

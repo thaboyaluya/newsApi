@@ -24,7 +24,7 @@ exports.getAllGuardian=catchAsync(async(req,res,next)=>{
       };
       const cacheKey='guardian'
       const cacheData=myCache.get(cacheKey)
-      console.log(cacheData)
+      
 
       if(cacheData){
         console.log('Getting data from cache....')

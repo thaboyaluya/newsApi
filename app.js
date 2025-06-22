@@ -18,6 +18,12 @@ const app=express();
 
 app.set('trust proxy', 10 /* number of proxies between user and server */)
 app.get('/ip', (request, response) => response.send(request.ip))
+app.get('/',(req,res)=>{
+    res.status(200).json({
+        status:'success',
+        message:'hello from server'
+    })
+})
 
 app.use(helmet())
 if(process.env.NODE_ENV === 'development'){
